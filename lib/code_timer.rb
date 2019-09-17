@@ -19,9 +19,11 @@ def generate_array_integers(size)
 end
 
 def printed_results(results)
+  results_to_print = []
   results.each do |size, result|
-    puts "#{size}: #{result}\n"
+    results_to_print << "#{size}: #{result}\n"
   end
+  results_to_print
 end
 
 public
@@ -40,7 +42,7 @@ def code_timer_reverse
     time_taken = end_time - start_time
     results[size] = time_taken
   end
-  printed_results(results)
+  results
 end
 
-code_timer_reverse
+puts printed_results(code_timer_reverse)
