@@ -41,6 +41,8 @@ def printed_results(results)
   end
 end
 
+
+# EXAMPLE USES:
 array_reverse = Proc.new { |array| array.reverse }
 printed_results(code_timer_for_arrays(array_reverse))
 
@@ -49,3 +51,6 @@ printed_results(code_timer_for_arrays(array_last))
 
 array_shuffle = Proc.new { |array| array.shuffle}
 printed_results(code_timer_for_arrays(array_shuffle))
+
+array_sort = Proc.new { |array| array.sort}
+printed_results(code_timer_for_arrays(array_sort))

@@ -15,4 +15,9 @@ describe 'code_timer_for_arrays_reverse' do
     array_shuffle = Proc.new { |array| array.shuffle }
     expect(code_timer_for_arrays(array_shuffle).last[1]).to be >= code_timer_for_arrays(array_shuffle).first[1]
   end
+
+  it 'gives code times for the sort method on increasing size of arrays' do
+    array_sort = Proc.new { |array| array.sort }
+    expect(code_timer_for_arrays(array_sort).last[1]).to be >= code_timer_for_arrays(array_sort).first[1]
+  end
 end
