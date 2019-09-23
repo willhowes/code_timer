@@ -3,7 +3,7 @@ require 'spreadsheet'
 
 SIZE_OF_ARRAYS = [50000, 100000, 150000, 200000, 250000, 300000,
   350000, 400000, 450000, 500000, 550000, 600000, 650000, 700000,
-  750000, 800000, 850000, 900000, 950000, 10000000]
+  750000, 800000, 850000, 900000, 950000, 1000000]
 
 def code_timer_for_arrays(block_of_code)
   results = []
@@ -46,25 +46,10 @@ end
 def save_to_spreadsheet(results, sheet_name)
   book = Spreadsheet::Workbook.new
   book.create_worksheet :name => sheet_name
+
   results.each_with_index do |result, index|
     book.worksheet(0).insert_row(index, result)
   end
 
   book.write 'new_spreadsheet.xls'
-
 end
-
-
-# EXAMPLE USES:
-array_reverse = Proc.new { |array| array.reverse }
-save_to_spreadsheet(code_timer_for_arrays(array_reverse), 'reverse_results')
-
-
-# array_last = Proc.new { |array| array.last }
-# printed_results(code_timer_for_arrays(array_last))
-#
-# array_shuffle = Proc.new { |array| array.shuffle}
-# printed_results(code_timer_for_arrays(array_shuffle))
-#
-# array_sort = Proc.new { |array| array.sort}
-# printed_results(code_timer_for_arrays(array_sort))
