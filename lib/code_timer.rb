@@ -42,14 +42,13 @@ def printed_results(results)
   end
 end
 
-
-def save_to_spreadsheet(results, sheet_name)
+def save_to_spreadsheet(results, file_name)
   book = Spreadsheet::Workbook.new
-  book.create_worksheet :name => sheet_name
+  book.create_worksheet :name => 'new_worksheet'
 
   results.each_with_index do |result, index|
     book.worksheet(0).insert_row(index, result)
   end
 
-  book.write 'new_spreadsheet.xls'
+  book.write "#{file_name}.xls"
 end
