@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     ruby-ole (1.2.12.2)
     spreadsheet (1.2.4)
