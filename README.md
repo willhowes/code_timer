@@ -9,8 +9,8 @@ https://github.com/makersacademy/course/blob/master/algorithmic_complexity/timin
 Run the following in your command line:
 ```
 git clone git@github.com:willhowes/code_timer.git
-bundle install
 cd code_timer
+bundle install
 ruby lib/code_timer.rb
 ```
 
