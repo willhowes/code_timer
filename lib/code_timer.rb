@@ -20,6 +20,17 @@ module CodeTimer
     results
   end
 
+  def code_timer_for_arrays_given_size(block_of_code, size)
+    results = []
+    array_to_test = generate_array_integers(size)
+    start_time = Time.now
+    block_of_code.call(array_to_test)
+    end_time = Time.now
+    time_taken = ((end_time - start_time) * 100000.0)
+    results << [size, time_taken]
+    results
+  end
+
   def generate_string(number)
     charset = Array('A'..'Z') + Array('a'..'z') + Array(1..9)
     Array.new(number) { charset.sample }.join
@@ -54,5 +65,5 @@ module CodeTimer
 
     book.write "#{file_name}.xls"
   end
-  
+
 end

@@ -21,4 +21,11 @@ describe 'code_timer_for_arrays_reverse' do
     array_sort = Proc.new { |array| array.sort }
     expect(CodeTimer.code_timer_for_arrays(array_sort).last[1]).to be >= code_timer_for_arrays(array_sort).first[1]
   end
+
+  describe "#code_timer_for_arrays_given_size" do
+    it 'handles a proc and the size of the array' do
+      array_sort = Proc.new { |array| array.sort }
+      expect(CodeTimer.code_timer_for_arrays_given_size(array_sort,100000).last[1]).to be >= code_timer_for_arrays(array_sort).first[1]
+    end
+  end
 end
